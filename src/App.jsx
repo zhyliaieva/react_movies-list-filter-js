@@ -9,8 +9,8 @@ function prepareMovies(movies, { query }) {
   if (normalizedQuery) {
     return movies.filter(
       movie =>
-        movie.title.toLowerCase().includes(normalizedQuery) ||
-        movie.description.toLowerCase().includes(normalizedQuery),
+        (movie.title || '').toLowerCase().includes(normalizedQuery) ||
+        (movie.description || '').toLowerCase().includes(normalizedQuery),
     );
   }
 
